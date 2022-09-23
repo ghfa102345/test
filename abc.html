@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/pattern.css" rel="stylesheet">
     <title>Document</title>
     <style>
 * {
@@ -11,19 +12,24 @@
     padding: 0;
 }
 html, body {
-    background-color:lightsteelblue;
-    width: 100%;
-    height: 100%;
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
 }
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:lightsteelblue;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+}
 .wrapper {
     display: flex;
     flex-direction: column;
-    max-height: calc(100vh - 20px);
-    max-width: calc(100vw - 20px);
-    padding: 10px;
+    max-height: 100%;
+    max-width: 100%;
+    margin: 10px;
 }
 .header {
     /*background-color: burlywood;*/
@@ -33,17 +39,14 @@ html, body {
     justify-content: center;
     align-items: center;
     text-align: center;
+    margin: 0 0 10px;
 }
 .container {
    /*background-color: cornsilk;*/
-    max-width: 1140px;
     width: 100%;
-    margin: 0 auto;
 }
 .header__title {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: xx-large;
-    margin: 15px 0;
+    color: black;
 }
 .main {
    /* background-color: cadetblue;*/
@@ -84,7 +87,7 @@ html, body {
 	height: 100%;
 	position: absolute;
 	-webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
+	backface-visibility: hidden;
     border-radius: 10%;
 }
 .card__front {
@@ -99,13 +102,10 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* max-width: 80px; */
-    /* max-height: 80px; */
-    padding: 10px;
-    width: calc(100% - 20px);
+    align-self: center;
 }
 .card__back {
-    transform: rotateY(180deg);
+	transform: rotateY(180deg);
     background-color: beige;
     display: flex;
 }
@@ -117,11 +117,10 @@ html, body {
     gap: 10px;
     flex-wrap: wrap;
     color: black;
-    background-color: lightcoral;
+    background-color:lightcoral;
     border-radius: 10px;
     text-align: center;
     margin: -17px auto 0;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .status-bar__time {
 }
@@ -129,43 +128,47 @@ html, body {
 }
 @media screen and (orientation:portrait) {
     .header__title {
-        font-size: 3.7vh;
+        font-size: 3vh;
     }
     .game {
         /*width: calc(45vh - 40px - 0.4vh - 4vh);*/
-        width: calc(43vh - 20px - 0.4vh - 4vh);
-        height: calc(56.9vh - 30px - 0.4vh - 4vh);
+        width: calc(49vh - 20px - 0.4vh - 4vh - 40px);
+        height: calc(62.9vh - 30px - 0.4vh - 4vh);
         /*height: calc(45vh - 40px - 0.4vh - 4vh);*/
         border: 0.2vh groove black;
         padding: 2vh;
     }
     .status-bar {
-        width: calc(25vh - 0.4vw - 1.6vh);
-        font-size: 1.5vh;
+        width: calc(22vh - 0.4vw - 1.6vh);
+        font-size: 1.3vh;
         border: 0.2vh groove black;
         padding: 0.8vh;
-        margin: -1.5vh auto 10px;
+        margin: -1.5vh auto 0;
     }
     .card__front-img {
         font-size: 3vh;
+        font-family: cursive;
     }
     .wrapper {
 
     }
     body {
-	display: flex;
-    	align-items: center;
-	justify-content: center;
+        overflow: hidden;
+    }
+    .card__img {
+        padding: 1vh;
+        width: calc(100% - 2vh);
     }
 }
+
 /* Landscape */
 @media screen and (orientation:landscape) {
     .header__title {
-        font-size: 3.7vw;
+        font-size: 3vw;
     }
     .game {
-        /*width: calc(45vw - 0.4vw - 30px - 4vw);
-        height: calc(45vw - 0.4vw - 20px - 4vw);*/
+        /*width: calc(45vw - 0.4vw - 40px - 4vw);
+        height: calc(45vw - 0.4vw - 40px - 4vw);*/
         width: calc(56.9vw - 0.4vw - 40px - 4vw);
         height: calc(43vw - 0.4vw - 40px - 4vw);
         border: 0.2vw groove black;
@@ -174,22 +177,25 @@ html, body {
         grid-template-rows: repeat(3, 1fr);
     }
     .status-bar {
-        width: calc(25vw - 0.4vw - 1.6vw);
-        font-size: 1.5vw;
+        width: calc(22vw - 0.4vw - 1.6vw);
+        font-size: 1.3vw;
         border: 0.2vw groove black;
         padding: 0.8vw;
-        margin: -1.5vw auto 15px;
+        margin: -1.5vw auto 0;
     }
     .card__front-img {
         font-size: 3vw;
+        font-family:monospace;
     }
     .wrapper {
         
     }
     body {
-        display: flex;
-    	align-items: center;
-    	justify-content: center;
+        
+    }
+    .card__img {
+        padding: 1vw;
+        width: calc(100% - 2vw);
     }
 }
     </style>

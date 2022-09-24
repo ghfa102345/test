@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            border: 0;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+        }
+        body {
+            font-family: cursive;
+            color: white;
+            width: 100%;
+            min-height: 100vh;
+            background: #DCE35B;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(#DCE35B, #45B649);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(#DCE35B, #45B649); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background: -moz-linear-gradient(#DCE35B, #45B649);
+        }
+        .wrapper {
+            width: 100%;
+            min-height: 100vh;
+            height: 100%;
+            padding: 0.625rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .header {
+            width: 100%;
+            height: 100%;
+        }
+        .header__container {
+        }
+        .container {
+            width: 100%;
+            height: 100%;
+        }
+        .header__title {
+            text-align: center;
+            font-size: 2.75rem;
+        }
+        .main {
+            flex: 1 1 auto;
+            width: 100%;
+            height: 100%;
+        }
+        .main__container {
+            /*display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;*/
+        }
+        .game {
+        }
+        .game__inner {
+            display: grid;
+            padding: 0.625rem;
+            /*width: calc(100% - 0.626rem - 0.625rem - 0.625rem);
+            height: calc(100% - 0.626rem - 0.625rem - 0.625rem);*/
+            width: fit-content;
+            height: fit-content;
+            column-gap: 0.313rem;
+            row-gap: 0.313rem;
+            /*grid-template-columns: repeat(4, calc(25vw - 0.313rem - 0.625rem - 0.625rem));
+            grid-template-rows: repeat(4, calc(25vw - 0.313rem - 0.625rem - 0.625rem));*/
+            /*grid-template-columns: repeat(4, calc(8rem - 0.313rem - 0.625rem - 0.625rem));
+            grid-template-rows: repeat(4, calc(8rem - 0.313rem - 0.625rem - 0.625rem));*/
+            grid-template-columns: repeat(4, minmax(0rem, calc(8rem - 0.313rem - 0.625rem - 0.625rem)));
+            grid-template-rows: repeat(4, minmax(0rem, calc(8rem - 0.313rem - 0.625rem - 0.625rem)));
+            /*max-width: 500px;
+            max-height: 600px;*/
+            border: 0.313rem white solid;
+            border-radius: 0.313rem;
+            margin: 0 auto;
+            justify-content: center;
+        }
+        .card {
+        }
+        .card__inner {
+            position: relative;
+            height: 100%;
+            width: 100%;
+        }
+        .card__front {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-color: #45B649;
+        }
+        .card__back {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+        }
+        .card__img {
+            width: 100%;
+        }
+        .status-bar {
+            display: flex;
+            gap: 0.625rem;
+            font-size: 1.5rem;
+            justify-content: center;
+        }
+        .status-bar__time {
+        }
+        .status-bar__matches {
+        }
+        @media (max-width: 500px) {
+            .game__inner {
+                grid-template-columns: repeat(4, calc(25vw - 0.313rem - 0.625rem - 0.625rem));
+                grid-template-rows: repeat(4, calc(25vw - 0.313rem - 0.625rem - 0.625rem));
+            }
+        }
+        @media (min-width: 1280px) and (min-height: 700px) {
+            .game__inner {
+                grid-template-columns: repeat(4, minmax(0rem, calc(10rem - 0.313rem - 0.625rem - 0.625rem)));
+                grid-template-rows: repeat(4, minmax(0rem, calc(10rem - 0.313rem - 0.625rem - 0.625rem)));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="header__container container">
+                <h1 class="header__title">Memory Game</h1>
+            </div>
+        </header>
+        <main class="main">
+            <div class="main__container container">
+                <section class="game">
+                    <div class="game__inner">
+                        <div class="card">
+                            <div class="card__inner">
+                                <div class="card__front"></div>
+                                <div class="card__back">
+                                    <img src="./assets/img/card-back/new-year/1.svg" alt="" class="card__img">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card__inner">
+                                <div class="card__front"></div>
+                                <div class="card__back">
+                                    <img src="./assets/img/card-back/new-year/1.svg" alt="" class="card__img">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card__inner">
+                                <div class="card__front"></div>
+                                <div class="card__back">
+                                    <img src="./assets/img/card-back/new-year/1.svg" alt="" class="card__img">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card__inner">
+                                <div class="card__front"></div>
+                                <div class="card__back">
+                                    <img src="./assets/img/card-back/new-year/1.svg" alt="" class="card__img">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card__inner">
+                                <div class="card__front"></div>
+                                <div class="card__back">
+                                    <img src="./assets/img/card-back/new-year/1.svg" alt="" class="card__img">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card__inner">
+                                <div class="card__front"></div>
+                                <div class="card__back">
+                                    <img src="./assets/img/card-back/new-year/1.svg" alt="" class="card__img">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card__inner">
+                                <div class="card__front"></div>
+                                <div class="card__back">
+                                    <img src="./assets/img/card-back/new-year/1.svg" alt="" class="card__img">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card__inner">
+                                <div class="card__front"></div>
+                                <div class="card__back">
+                                    <img src="./assets/img/card-back/new-year/1.svg" alt="" class="card__img">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card__inner">
+                                <div class="card__front"></div>
+                                <div class="card__back">
+                                    <img src="./assets/img/card-back/new-year/1.svg" alt="" class="card__img">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card__inner">
+                                <div class="card__front"></div>
+                                <div class="card__back">
+                                    <img src="./assets/img/card-back/new-year/1.svg" alt="" class="card__img">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card__inner">
+                                <div class="card__front"></div>
+                                <div class="card__back">
+                                    <img src="./assets/img/card-back/new-year/1.svg" alt="" class="card__img">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card__inner">
+                                <div class="card__front"></div>
+                                <div class="card__back">
+                                    <img src="./assets/img/card-back/new-year/1.svg" alt="" class="card__img">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card__inner">
+                                <div class="card__front"></div>
+                                <div class="card__back">
+                                    <img src="./assets/img/card-back/new-year/1.svg" alt="" class="card__img">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card__inner">
+                                <div class="card__front"></div>
+                                <div class="card__back">
+                                    <img src="./assets/img/card-back/new-year/1.svg" alt="" class="card__img">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card__inner">
+                                <div class="card__front"></div>
+                                <div class="card__back">
+                                    <img src="./assets/img/card-back/new-year/1.svg" alt="" class="card__img">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card__inner">
+                                <div class="card__front"></div>
+                                <div class="card__back">
+                                    <img src="./assets/img/card-back/new-year/1.svg" alt="" class="card__img">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="status-bar">
+                    <p class="status-bar__time">Time: 00.00</p>
+                    <p class="status-bar__matches">Matches: 0</p>
+                </section>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
